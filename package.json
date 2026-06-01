@@ -1,0 +1,40 @@
+{
+  "name": "whatsapp-obsidian-sync",
+  "version": "0.0.1",
+  "description": "Agent skill: pull new WhatsApp messages from a local WAHA server and sync them into an Obsidian vault.",
+  "type": "module",
+  "author": "Christopher Burgahn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christopherburgahn/whatsapp-obsidian-sync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christopherburgahn/whatsapp-obsidian-sync/issues"
+  },
+  "homepage": "https://github.com/christopherburgahn/whatsapp-obsidian-sync#readme",
+  "keywords": [
+    "agent-skills",
+    "obsidian",
+    "waha",
+    "whatsapp",
+    "markdown"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "sync": "npm run -s build && node dist/sync.js",
+    "fetch": "npm run -s build && node dist/fetch.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run -s build && node dist/lib/verify.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.6.0"
+  }
+}
